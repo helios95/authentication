@@ -1,0 +1,25 @@
+server:
+  port: 8083
+
+
+yalooStore:
+  front: http://localhost:8082
+  shop: http://localhost:8081
+  gateway: http://localhost:80
+
+
+application:
+  name: yalooStore-auth
+
+jwt:
+  secretKey: dadaasdaisdoasdhsajhkdhjadhhjdkjhahkjdhjkasdhjjhkdshkjajhkdajhdashjkadsjhkadshjkadsjhkdashjkadshjkadsjhkdahjk
+
+spring:
+  data:
+    redis:
+      password:
+      database: 0
+      host: 127.0.0.1
+      port: 6379
+  config:
+    import: "optional:configserver:"
