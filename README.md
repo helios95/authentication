@@ -1,7 +1,7 @@
 # AS-IS
 - 현재는 G.Round Client내에 인증 서비스가 구현되어있다.
 - 인증 요청 수신 시 클라이언트에서 jwt 토큰 발급해서 포인트, 노티 api 서버로 전달함.(런처 api는 client내에 구현됨)
-- 
+- 인가 서비스 제공하지 않음. 유저 등급을 1~5로 분류하여 최소한의 인가 사용. 권한 꼬이는 현상 발생중
 
 # TO-BE  
 # 인증 (Authentication)
@@ -13,7 +13,7 @@
 ## 구성
 인증, 인가 관련 작업을 처리하는 서버
 - 인증 : G.Round client에서 인증 요청이 수신 시 여기서 처리를 진행하고 jwt 생성 및 redis 저장 후 Access Token 반환
-- 인가 : G.Round client에서 인가 요청시 
+- 인가 : G.Round client에서 인가 요청시 DB에서 권한 정보 확인 후(기획팀 정책 수립) 접근 허용
 
 ## 해당 구조의 흐름(authentication - 인증)
 ![image](https://github.com/yalooStore/yalooStore-auth/assets/81970382/c254b6ec-642c-43a3-8faa-6ebd613f1d6c)
