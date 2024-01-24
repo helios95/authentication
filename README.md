@@ -39,7 +39,10 @@
  - UserDetailsService에서 넘겨받은 회원 아이디와 저장된 회원 아이디가 일치하는 회원이 있는지를 확인하는 작업을 하고, `AuthenticationProvider`에서 해당 회원의 비밀번호가 맞는지 확인
  - 인증 실패 시 : 회원 정보가 잘못된 경우라면 해당 필터에서는 `FailureHandler`를 사용해서 해당 로그인 폼으로 redirection
  - 인증 성공 시: 회원 정보가 일치하고 인증에 성공했다면 `successfulAuthentication()` 메소드를 사용해 jwt - accessToken, refreshToken을 발급하고 해당 아이디를 uuid로 만들어 해당 정보들을 uuid : {hashKey:hashValue} 형태로 redis에 저장
- - jwt 발급과 redis 저장과 더불어서 성공
+ - successfulAuthentication()
+   - jwt accessToken, refreshToken 발급
+   - Header에 uuid, token expired time, authentication 정보(jwt access Token)전달
+   - redis 저장
  - redis 저장 정보 종류
      - access token
      - refresh token
