@@ -29,11 +29,6 @@
   - `authenticationManager`는 auth 서버와 통신을 통해서 인증 받은 사용자라면 jwt 관련 정보를 넘겨 받아 인증 서비스 진행
     - 이때 API 서버와도 통신하여 해당 회원 정보를 넘겨받는 작업을 추가적으로 진행
     - 해당 정보를 직렬화한 클래스를 사용해서 redis에 객체 형식으로 저장
-    - redis 저장 정보 종류
-      - access token
-      - refresh token
-      - login id(유저 식별자)
-      - principal(유저에게 부여된 권한 종류)
 
 #### auth server
   - 인증 관련 처리 요청 수행 서버
